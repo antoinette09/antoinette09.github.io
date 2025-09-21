@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>KpopEdits | Weekly Poll</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <div class="logo">Kpop<span>Edits</span></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="clips.html">Clips</a>
+            <a href="overlays.html">Overlays</a>
+            <a href="sounds.html">Sounds</a>
+            <a href="poll.html" class="active">Poll</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>🗳️ Weekly Editor Poll</h2>
+            <p>Vote once. Results update live!</p>
+
+            <div id="poll-options">
+                <div style="margin:1.5rem 0;">
+                    <input type="radio" name="vote" value="NewJeans" id="v1">
+                    <label for="v1">NewJeans Comeback</label>
+                </div>
+                <div style="margin:1.5rem 0;">
+                    <input type="radio" name="vote" value="IVE" id="v2">
+                    <label for="v2">IVE Performance</label>
+                </div>
+                <button class="link-btn" onclick="submitVote()">Submit Vote</button>
+            </div>
+
+            <div id="poll-results" style="display:none; margin-top:2rem;">
+                <h3>📊 Current Results</h3>
+                <div id="results-container"></div>
+                <p><small>You voted: <span id="your-vote"></span></small></p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>Made with 💜 by fans, for fans. No copyright infringement intended.</p>
+        <p>© 2025 KpopEdits. Free forever.</p>
+    </footer>
+
+    <script>
+        const POLL_KEY = "kpopedits_week_04";
+        const hasVoted = localStorage.getItem(POLL_KEY);
+        let votes = JSON.parse(localStorage.getItem(POLL_KEY + "_data") || "{}");
+
+        if (hasVoted) showResults();
+
+        function submitVote() {
+            const selected = document.querySelector('input[name="vote"]:checked');
+            if (!selected) {
+                alert("Please pick one!");
+                return;
+            }
+            const choice = selected.value;
+            votes[choice] = (votes[choice] || 0) + 1;
+            localStorage.setItem(POLL_KEY, choice);
+            localStorage.setItem(POLL_KEY + "_data", JSON.stringify(votes));
+            showResults();
+            document.getElementById("your-vote").textContent = choice;
+        }
+
+        function showResults() {
+            const total = Object.values(votes).reduce((a,b)=>a+b,0);
+            const container = document.getElementById("results-container");
+            for (const [opt, count] of Object.entries(votes)) {
+                const percent = Math.round((count / total) * 100);
+                container.innerHTML += `<div>${opt}: <strong>${percent}%</strong> (${count})</div>`;
+            }
+            document.getElementById("poll-results").style.display = "block";
+            document.getElementById("poll-options").style.display = "none";
+        }
+    </script>
+</body>
+</html>

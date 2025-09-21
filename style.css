@@ -1,0 +1,67 @@
+/* style.css - Midnight Purple Theme */
+:root {
+    --bg: #12081a;
+    --card: #1e0b3a;
+    --primary: #d05ce3;
+    --text: #e0d5ff;
+    --text-light: #a997de;
+    --border: #4a1c7c;
+}
+
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+}
+body {
+    background: var(--bg); color: var(--text);
+    font-family: 'Segoe UI', sans-serif; line-height: 1.6;
+}
+header {
+    background: linear-gradient(to right, #1a0f2a, #2a124a);
+    padding: 1.5rem 0; text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+.logo {
+    font-size: 2rem; font-weight: 700; color: white;
+}
+.logo span {
+    color: var(--primary); text-shadow: 0 0 10px rgba(208,92,227,0.4);
+}
+nav a {
+    color: var(--text-light); margin: 0 1rem;
+    text-decoration: none; font-weight: 500;
+}
+nav a.active {
+    color: var(--primary); text-decoration: underline;
+}
+.container {
+    width: 90%; max-width: 1000px; margin: 2rem auto; padding: 0 1rem;
+}
+section {
+    background: var(--card); border-radius: 12px;
+    padding: 2rem; margin-bottom: 2rem;
+    border: 1px solid var(--border);
+}
+h2 {
+    color: var(--primary); margin-bottom: 1rem;
+}
+img {
+    border-radius: 10px; display: block;
+    width: 100%; max-width: 300px; height: 300px;
+    object-fit: cover; border: 2px solid var(--border);
+    margin: 1rem 0;
+}
+.image-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+.link-btn {
+    background: var(--primary); color: white;
+    border: none; padding: 0.6rem 1.2rem;
+    border-radius: 20px; cursor: pointer;
+    font-size: 0.9rem;
+}
+footer {
+    text-align: center; padding: 2rem;
+    background: #1a0f2a; color: var(--text-light);
+    margin-top: 3rem;
+}
