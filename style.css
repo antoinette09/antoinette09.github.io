@@ -34,7 +34,44 @@ nav a.active {
     color: var(--primary); text-decoration: underline;
 }
 .container {
-    width: 90%; max-width: 1000px; margin: 2rem auto; padding: 0 1rem;
+    width: 90%;
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    margin: 0 auto;
+    justify-items: center;
+}
+
+/* Make sure each card resizes nicely */
+.image-grid > div {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 1 / 1; /* Keeps square shape */
+}
+
+.image-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Make sure buttons and links don't stretch oddly */
+.link-btn {
+    margin: 0 auto;
+    display: inline-block;
 }
 section {
     background: var(--card); border-radius: 12px;
@@ -64,4 +101,55 @@ footer {
     text-align: center; padding: 2rem;
     background: #1a0f2a; color: var(--text-light);
     margin-top: 3rem;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background: transparent;
+    color: var(--text-light);
+    padding: 0.5rem 0.8rem;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dropbtn:hover {
+    color: var(--primary);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: #1e0b3a;
+    min-width: 150px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    border-radius: 8px;
+    z-index: 1;
+    margin-top: 0.5rem;
+}
+
+.dropdown-content a {
+    color: var(--text-light);
+    padding: 0.8rem 1rem;
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background: #2a124a;
+    color: var(--primary);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    color: var(--primary);
 }

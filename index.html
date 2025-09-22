@@ -4,21 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>KpopEdits | Home</title>
+    <!-- Link to your shared style.css file -->
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+    <!-- HEADER: This is the top bar with your logo and menu -->
     <header>
         <div class="logo">Kpop<span>Edits</span></div>
-        <nav>
-            <a href="index.html" class="active">Home</a>
-            <a href="clips.html">Clips</a>
-            <a href="overlays.html">Overlays</a>
-            <a href="sounds.html">Sounds</a>
-            <a href="poll.html">Poll</a>
-        </nav>
+        <!-- Navigation menu - these are the buttons at the top -->
+      <nav>
+           <a href="index.html">Home</a>
+<a href="clips.html">Clips</a>
+<a href="overlays.html">Overlays</a>
+<a href="sounds.html">Sounds</a>
+<a href="poll.html">Poll</a>
+<div class="dropdown">
+    <button class="dropbtn">▼ More</button>
+    <div class="dropdown-content">
+        <a href="tutorials.html">Tutorials</a>
+        <a href="community.html">Community</a>
+        <a href="about.html">About</a>
+    </div>
+</div>
+		</nav>
     </header>
 
+    <!-- CONTAINER: Everything below the header goes here -->
     <div class="container">
+
+        <!-- HERO SECTION: The big welcome area at the top -->
         <section style="text-align: center; background: url('https://placehold.co/1000x300/1e0b3a/d05ce3?text=K-Pop+Editing') no-repeat center/cover; color: white;">
             <div style="background:rgba(0,0,0,0.7); padding:3rem; border-radius:12px;">
                 <h2>Welcome to KpopEdits ✦</h2>
@@ -26,28 +41,56 @@
             </div>
         </section>
 
+        <!-- WHAT'S INSIDE SECTION: This shows the main features -->
         <section>
-            <h2>✨ What's Inside</h2>
-            <div class="image-grid">
-                <div>
-                    <img src="https://placehold.co/300x300/2a124a/d05ce3?text=Idol+Clips" alt="Clips">
-                    <p><a href="clips.html" class="link-btn">Browse Clips</a></p>
-                </div>
-                <div>
-                    <img src="https://placehold.co/300x300/2a124a/d05ce3?text=Overlays" alt="Overlays">
-                    <p><a href="overlays.html" class="link-btn">Get Overlays</a></p>
-                </div>
-                <div>
-                    <img src="https://placehold.co/300x300/2a124a/d05ce3?text=Tutorials" alt="Tutorials">
-                    <p><a href="sounds.html" class="link-btn">Trending Sounds</a></p>
-                </div>
+    <h2>✨ What's Inside</h2>
+
+    <!-- Grid: Each Card Has Image + Text Overlay -->
+    <div class="image-grid">
+        <!-- Card 1: Clips -->
+        <div style="position: relative; text-align: center;">
+            <!-- Image -->
+            <img src="https://i.postimg.cc/C53NCLfN/IMG-3756.jpg?text=Idol+Clips" alt="Idol Clips">
+            <!-- Text Overlay -->
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+                        display: flex; flex-direction: column; justify-content: center; 
+                        background: rgba(30, 11, 58, 0.7); border-radius: 12px; padding: 1rem;">
+                <p><strong>Browse idol clips for your edits</strong></p>
+                <a href="clips.html" class="link-btn">Browse Clips</a>
             </div>
-        </section>
+        </div>
+
+        <!-- Card 2: Overlays -->
+        <div style="position: relative; text-align: center;">
+            <img src="https://i.postimg.cc/MZg2377s/IMG-3757.jpg?text=Overlays" alt="Overlays">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+                        display: flex; flex-direction: column; justify-content: center; 
+                        background: rgba(30, 11, 58, 0.7); border-radius: 12px; padding: 1rem;">
+                <p><strong>Get free overlays & effects</strong></p>
+                <a href="overlays.html" class="link-btn">Get Overlays</a>
+            </div>
+        </div>
+
+        <!-- Card 3: Sounds -->
+        <div style="position: relative; text-align: center;">
+            <img src="https://i.postimg.cc/gcxbKSZX/IMG-3758.jpg?text=Trending+Sounds" alt="Trending Sounds">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+                        display: flex; flex-direction: column; justify-content: center; 
+                        background: rgba(30, 11, 58, 0.7); border-radius: 12px; padding: 1rem;">
+                <p><strong>Use trending edit sounds</strong></p>
+                <a href="sounds.html" class="link-btn">Trending Sounds</a>
+            </div>
+        </div>
+    </div>
+</section>
+
     </div>
 
+    <!-- FOOTER: Bottom of the page -->
     <footer>
         <p>Made with 💜 by fans, for fans. No copyright infringement intended.</p>
         <p>© 2025 KpopEdits. Free forever.</p>
     </footer>
+
 </body>
 </html>
